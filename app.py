@@ -70,8 +70,6 @@ def main():
                        page_icon=":books:")
     st.write(css, unsafe_allow_html=True)
 
-    open_api_key = st.sidebar.text_input("Open API Key", type="password")
-    
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
@@ -81,9 +79,6 @@ def main():
     user_question = st.text_input("Ask a question about your documents:")
     if user_question:
         handle_userinput(user_question)
-        if not open_api_key :
-            st.info("Please add your OpenAPI key to continue.")
-            st.stop()
             
     with st.sidebar:
         
